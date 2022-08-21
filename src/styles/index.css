@@ -1,12 +1,78 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: gray;
+}
 
-/* 
+.todos {
+  width: 400px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 2px;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.todos_container {
+  height: 500px;
+}
 
-*/
+.todos_title {
+  text-align: center;
+}
+
+.todos_title > h1 {
+  color: gray;
+}
+
+.todos_container > input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+}
+
+.task_container {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.task_container > h1 {
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+  margin-top: 50%;
+}
+
+.task_aligner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid gray;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  color: red;
+}
+
+.itemsLeft {
+    width: 97%;
+    position: absolute;
+    bottom: 0;
+    margin-left: 5px;
+    padding-left: 5px;
+    color: gray;
+}
