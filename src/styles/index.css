@@ -19,6 +19,7 @@
 
 .todos_container {
   height: 500px;
+  position: relative;
 }
 
 .todos_title {
@@ -38,11 +39,9 @@
 }
 
 .task_container {
-  display: flex;
   flex-direction: column;
-  height: 90%;
+  height: 85%;
   overflow-y: auto;
-  position: relative;
 }
 
 .task_container > h1 {

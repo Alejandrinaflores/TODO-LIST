@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Task from "../component/Task.jsx";
 import Title from "../component/Title.jsx";
 
@@ -9,15 +9,12 @@ const Todos = () => {
     },
   ]);
 
-  useEffect(() => {
-    const inputAddTask = document.getElementById("addTask");
-
-    inputAddTask.addEventListener("keypress", (event) => {
-      if (event.key === "Enter") {
-        setTasks([...tasks, { task: inputAddTask.value }]);
-      }
-    });
-  });
+  const handleInput = (e) => {
+    if(e.target.value !== '' && e.key === 'Enter'){
+      setTasks([...tasks, { task: e.target.value }]);
+      e.target.value = '';
+    }
+  };
 
   const handleDelete = (taskId) => {
     const newTodo = [...tasks];
@@ -28,15 +25,15 @@ const Todos = () => {
   return (
     <div className="wrapper">
       <div className="todos">
+        
         <div className="todos_title">
           <Title />
         </div>
+        
         <div className="todos_container">
-          <input
-            id="addTask"
-            type="text"
-            placeholder="What needs to be done ?"
-          />
+         
+          <input onKeyDown={ handleInput } id="addTask" type="text" placeholder="What needs to be done ?" />
+         
           <div className="task_container">
             {tasks.length === 0 ? (
               <h1>No tasks, add a task</h1>
